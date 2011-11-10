@@ -104,15 +104,21 @@ function makeContextMenuAndDblClick(){
 		menu: 'myMenu'
 	},
 		function(action, el, pos) {
-			$("#debug").append(action+": "+$(el).attr("id")+"<br />");
+			$("#debug").prepend(action+": "+$(el).attr("id")+"<br />");
 	});
 	$("#chart g.node").click(function(evt){
 		var id=$(evt.currentTarget).attr("id");
 		var time=new Date().getTime();
 		if(doubleClick["id"]==id && doubleClick["time"]>(time-500))
-			$("#debug").append("DOUBLECLICK: "+id+"<br />");
+			$("#debug").prepend("DOUBLECLICK: "+id+"<br />");
 		doubleClick["id"]=id;
 		doubleClick["time"]=time;
+	});
+	$("#chart g.node").mouseover(function(evt){
+		$("#debug").prepend("MOUSEOVER: "+$(evt.currentTarget).attr("id")+"<br />");
+	});
+	$("#chart g.node").mouseout(function(evt){
+		$("#debug").prepend("MOUSEOUT: "+$(evt.currentTarget).attr("id")+"<br />");
 	});
 }
 makeContextMenuAndDblClick();
