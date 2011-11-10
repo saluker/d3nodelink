@@ -1,0 +1,57 @@
+<data>
+<meta query="Diseases, Lung" id="C0024115" mapping="yes" nodes="25" avgConCount="155"/>
+<edges>
+<edge a="0" b="10" concurrency="1480"/>
+<edge a="1" b="9" concurrency="1383"/>
+<edge a="2" b="9" concurrency="1370"/>
+<edge a="2" b="18" concurrency="1233"/>
+<edge a="3" b="10" concurrency="1468"/>
+<edge a="4" b="9" concurrency="1411"/>
+<edge a="5" b="10" concurrency="1474"/>
+<edge a="6" b="17" concurrency="1394"/>
+<edge a="7" b="10" concurrency="1221"/>
+<edge a="8" b="10" concurrency="1416"/>
+<edge a="9" b="10" concurrency="885"/>
+<edge a="9" b="11" concurrency="948"/>
+<edge a="9" b="12" concurrency="1248"/>
+<edge a="9" b="13" concurrency="1184"/>
+<edge a="9" b="20" concurrency="1059"/>
+<edge a="9" b="21" concurrency="1301"/>
+<edge a="10" b="22" concurrency="1466"/>
+<edge a="10" b="24" concurrency="1450"/>
+<edge a="11" b="14" concurrency="1274"/>
+<edge a="11" b="16" concurrency="769"/>
+<edge a="11" b="23" concurrency="965"/>
+<edge a="16" b="17" concurrency="1280"/>
+<edge a="19" b="20" concurrency="1374"/>
+</edges>
+<map>...</map>
+<nodes>
+<node num="0" name="Actinomycosis" id="C0001261" concurrency="79" category="Disease or Syndrome" krow="0" kcol="5" x="0.8916266846884082" y="0.5214894392316538"/>
+<node num="1" name="Bronchoalveolar Lavage Fluid" id="C0006279" concurrency="100" category="Body Substance" krow="3" kcol="2" x="0.6371387686861195" y="0.39259871313149125"/>
+<node num="2" name="Cystic Fibrosis" id="C0010674" concurrency="109" category="Disease or Syndrome" krow="7" kcol="0" x="0.4394140265223288" y="0.8172681457457486"/>
+<node num="3" name="Cysts" id="C0010709" concurrency="91" category="Anatomical Abnormality" krow="3" kcol="7" x="0.9365535654738953" y="0.6629927884909484"/>
+<node num="4" name="Dexamethasone" id="C0011777" concurrency="78" category="Steroid" krow="0" kcol="2" x="0.5223737450305252" y="0.4919003129703973"/>
+<node num="5" name="Granuloma" id="C0018188" concurrency="85" category="Pathologic Function" krow="0" kcol="7" x="0.9564497582564723" y="0.815639674506949"/>
+<node num="6" name="Heart Diseases" id="C0018799" concurrency="117" category="Disease or Syndrome" krow="4" kcol="7" x="0.0" y="0.0"/>
+<node num="7" name="Hemorrhage" id="C0019080" concurrency="338" category="Pathologic Function" krow="3" kcol="5" x="0.8796681538184772" y="0.9199648510256561"/>
+<node num="8" name="Infant, Premature, Diseases" id="C0021295" concurrency="143" category="Disease or Syndrome" krow="0" kcol="3" x="0.7913928686227508" y="1.0"/>
+<node num="9" name="Lung" id="C0024109" concurrency="674" category="Body Part, Organ, or Organ Component" krow="3" kcol="1" x="0.5873122048357917" y="0.6113871241489701"/>
+<node num="10" name="Diseases, Lung" id="C0024115" concurrency="9999" category="Disease or Syndrome" krow="2" kcol="4" x="0.7805189859349304" y="0.7241571276643525"/>
+<node num="11" name="Lung Neoplasms" id="C0024121" concurrency="283" category="Neoplastic Process" krow="7" kcol="7" x="0.3829185939377599" y="0.49181647241269816"/>
+<node num="12" name="Lung Transplantation" id="C0024128" concurrency="125" category="Therapeutic or Preventive Procedure" krow="5" kcol="0" x="0.5548240927023929" y="0.8159385237624601"/>
+<node num="13" name="Nitric Oxide" id="C0028128" concurrency="78" category="Biologically Active Substance" krow="3" kcol="0" x="0.4575270545252367" y="0.655883746294703"/>
+<node num="14" name="Occupational Diseases" id="C0028797" concurrency="177" category="Disease or Syndrome" krow="7" kcol="3" x="0.21772342190611876" y="0.4428448857858882"/>
+<node num="15" name="Occupational Exposure" id="C0028798" concurrency="91" category="Injury or Poisoning" krow="7" kcol="3" x="0.3789585837409668" y="0.27224121339588997"/>
+<node num="16" name="Pneumonectomy" id="C0032284" concurrency="93" category="Therapeutic or Preventive Procedure" krow="7" kcol="7" x="0.2643014000491874" y="0.2961016251247947"/>
+<node num="17" name="Postoperative Complications" id="C0032787" concurrency="172" category="Pathologic Function" krow="5" kcol="7" x="0.15081994290476192" y="0.1173776436855706"/>
+<node num="18" name="Pseudomonas Infections" id="C0033817" concurrency="81" category="Disease or Syndrome" krow="7" kcol="0" x="0.31782773243804796" y="0.9828208501579486"/>
+<node num="19" name="Pulmonary Alveoli" id="C0034051" concurrency="132" category="Body Part, Organ, or Organ Component" krow="0" kcol="0" x="0.7410221822282113" y="0.10123542381450228"/>
+<node num="20" name="Pulmonary Surfactants" id="C0034085" concurrency="84" category="Pharmacologic Substance" krow="0" kcol="0" x="0.6625376951347881" y="0.32862105946911857"/>
+<node num="21" name="Respiration, Artificial" id="C0035205" concurrency="93" category="Therapeutic or Preventive Procedure" krow="2" kcol="0" x="0.686031917614436" y="0.4854341241521977"/>
+<node num="22" name="Sarcoidosis" id="C0036202" concurrency="93" category="Disease or Syndrome" krow="0" kcol="7" x="0.7337882908830151" y="0.9167323189708404"/>
+<node num="23" name="Tomography, X-Ray Computed" id="C0040405" concurrency="318" category="Diagnostic Procedure" krow="7" kcol="7" x="0.23593374047423554" y="0.629008968102322"/>
+<node num="24" name="AIDS-Related Opportunistic Infections" id="C0162526" concurrency="109" category="Disease or Syndrome" krow="0" kcol="4" x="1.0" y="0.6038144902675325"/>
+</nodes>
+<mainnode num="10" name="Diseases, Lung" id="C0024115" concurrency="9999" category="Disease or Syndrome" krow="2" kcol="4" x="0.7805189859349304" y="0.7241571276643525"/>
+</data>

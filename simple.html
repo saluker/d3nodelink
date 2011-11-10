@@ -1,0 +1,119 @@
+<script src="js/libs/jquery-1.6.2.min.js"></script>
+
+<script src="d3/d3.js"></script>
+<script src="d3/d3.geom.js"></script>
+<script src="d3/d3.layout.js"></script>
+<script src="d3nl/d3nl.js"></script>
+
+<link rel="stylesheet" type="text/css" href="lib/jquery.contextMenu.css" />
+<script type="text/javascript" src="lib/jquery.contextMenu.js"></script>
+
+<style>
+body, html{
+	height:100%;margin:0px;
+	background:#000;color:white;
+	font-family:Arial,sans-serif;
+	font-weight:bold;
+}
+#chart{
+	width:80%;height:100%;
+	float:left;
+}
+#debug{
+	float:left;
+	
+}
+.node {
+  fill: #000;
+}
+.link {
+  stroke: #999;
+}
+.node text{
+	fill:white;
+	color: white;
+	font-family:Arial;
+	text-align:center;
+	text-anchor: middle;
+	font-size:13px;
+	font-weight:bold;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	cursor:default;
+}
+.draggable circle, .draggable text{
+	cursor:pointer;
+}
+</style>
+
+<div id="chart">
+	Shift-click anywhere to make a new node.  Double-click on a node to select it.  Right-click on node to bring up context menu.
+</div>
+<div id="debug">
+	
+</div>
+<ul id="myMenu" class="contextMenu">
+	<li class="edit"><a href="#edit">Edit</a></li>
+	<li class="cut separator"><a href="#cut">Cut</a></li>
+</ul>
+<script>
+
+var nlVis=new d3nl("#chart",500,500);
+var s=nlVis.addNode({ //label,x,y,fixed,r,color
+	id: "serge",
+	label: "Serge",
+	color: '#AA0000',x:250,y:250
+});
+var x=nlVis.addNode({
+	id: "xia",
+	label: "Xia",
+	color: '#00AA00',x:250,y:300
+});
+console.log(s);
+var link=nlVis.addLink({ //width, source, target, distance
+	source: s,
+	target: x
+});
+nlVis.restart();
+
+
+//click on node
+var newId=1;
+$("#chart").click(function(evt){
+	if(!evt.shiftKey) return;
+	console.log("chart click",evt);
+	newId++;
+	nlVis.addNode({
+		label: "new"+newId,
+		id: "new"+newId,
+		color: '#00AA00',x:evt.clientX,y:evt.clientY
+	});
+	nlVis.addLink({ //width, source, target, distance
+		source: nlVis.nodes.length-2,
+		target: nlVis.nodes.length-1
+	})
+	nlVis.restart();
+	makeContextMenuAndDblClick();
+});
+
+//context menu
+var doubleClick={"time":0,"id":""};
+function makeContextMenuAndDblClick(){
+	$("#chart g.node").contextMenu({
+		menu: 'myMenu'
+	},
+		function(action, el, pos) {
+			$("#debug").append(action+": "+$(el).attr("id")+"<br />");
+	});
+	$("#chart g.node").click(function(evt){
+		var id=$(evt.currentTarget).attr("id");
+		var time=new Date().getTime();
+		if(doubleClick["id"]==id && doubleClick["time"]>(time-500))
+			$("#debug").append("DOUBLECLICK: "+id+"<br />");
+		doubleClick["id"]=id;
+		doubleClick["time"]=time;
+	});
+}
+makeContextMenuAndDblClick();
+</script>

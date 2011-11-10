@@ -1,0 +1,105 @@
+<script src="js/libs/jquery-1.6.2.min.js"></script> <!-- general library for interactions -->
+
+<script src="d3/d3.js"></script> <!-- main d3.js file -->
+<script src="d3/d3.geom.js"></script> <!-- geometry libraries -->
+<script src="d3/d3.layout.js"></script> <!-- layouts like force layout (physics) -->
+
+<script src="d3nl/d3nl.js"></script> <!-- Serge wrote for us -->
+
+<style>
+body, html{
+	height:100%;margin:0px;
+}
+#chart{
+	width:100%;height:100%;background:#000;
+}
+.node {
+  fill: #000;
+}
+.link {
+  stroke: #999;
+}
+.node text{
+	fill:white;
+	color: white;
+	font-family:Arial;
+	text-align:center;
+	text-anchor: middle;
+	font-size:13px;
+	font-weight:bold;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	cursor:default;
+}
+.draggable circle, .draggable text{
+	cursor:pointer;
+}
+</style>
+<div id="chart">
+	
+</div>
+
+<script>
+function distBetweenTwoNodes(a,b){
+	return Math.sqrt((a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y));
+}
+var w=400,h=400;
+var nlVis=new d3nl("#chart",w,h);
+
+function processData(data){
+	for(var i=0;i<data["nodes"].length;i++){
+		nlVis.addNode({
+			x:parseFloat(Math.random())+200,
+			y:parseFloat(Math.random())+200,
+			label:data["nodes"][i]
+		});
+	}
+	for(var i=0;i<data["links"].length;i++){
+		nlVis.addLink({
+			source:nlVis.nodes[data["links"][i][0]],
+			target:nlVis.nodes[data["links"][i][1]]
+		})
+	}
+	resumer();
+	nlVis.restart();
+}
+
+var numberOfTimesLeftToResume=100;
+function resumer(){
+	nlVis.force.resume();
+	if(numberOfTimesLeftToResume>0){
+		numberOfTimesLeftToResume--;
+		setTimeout("resumer()",100);
+	}
+	
+}
+$.ajax({
+	url: "us.json",
+	dataType: "json",
+	success: processData
+});
+nlVis.restart();
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
