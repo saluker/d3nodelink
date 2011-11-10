@@ -39,6 +39,7 @@ body, html{
 	font-weight:bold;
 	-moz-user-select: none;
 	-khtml-user-select: none;
+	-webkit-user-select: none;
 	user-select: none;
 	cursor:default;
 }
@@ -54,7 +55,7 @@ body, html{
 	
 </div>
 <ul id="myMenu" class="contextMenu">
-	<li class="edit"><a href="#edit">Edit</a></li>
+	<li class="edit"><a href="#edit">Google</a></li>
 	<li class="cut separator"><a href="#cut">Cut</a></li>
 </ul>
 <script>
@@ -104,6 +105,11 @@ function makeContextMenuAndDblClick(){
 		menu: 'myMenu'
 	},
 		function(action, el, pos) {
+			if(action=="edit"){
+				q="https://www.google.com/search?q="+$(el).attr("id");
+				newwindow=window.open(q,'google');
+				if (window.focus) {newwindow.focus()}
+			}
 			$("#debug").prepend(action+": "+$(el).attr("id")+"<br />");
 	});
 	$("#chart g.node").click(function(evt){
